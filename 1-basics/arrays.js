@@ -42,27 +42,34 @@ console.log(myn2); // [1, 2, 3]
 const heros = ["thor", "iron man", "hulk"];
 const heros1 = ["superman", "flash", "batman"];
 
-// heros.push(heros1);
-// console.log(heros);
-// console.log(heros1);
+// heros.push(heros1); 
+// Note: If uncommented, this pushes the entire array as ONE element [3], creating a nested array.
 
-// console.log(heros[3][1]);
-const concatArr = heros.concat(heros1);
+const concatArr = heros.concat(heros1); 
+// Merges two arrays into a NEW array. Original arrays remain untouched.
 console.log(concatArr);
 
-const anothArr = [...heros, ...heros1];
+const anothArr = [...heros, ...heros1]; 
+// Spread Operator: "Shatters" the arrays and spreads elements into a new one. (Modern & Preferred)
 console.log(anothArr);
 
-const sample_arr = [1,2,3,[4,5],[6,7,[8,9,10],11]];
-console.log(sample_arr.flat(Infinity));
+const sample_arr = [1, 2, 3, [4, 5], [6, 7, [8, 9, 10], 11]];
+console.log(sample_arr.flat(Infinity)); 
+// Flattens nested arrays into a single array. 'Infinity' tells it to go as deep as needed.
 
-console.log(Array.isArray("tarun"));
-console.log(Array.from("tarun"));
+console.log(Array.isArray("tarun")); 
+// Checks if the input is an array. Returns false (it's a string).
 
-console.log(Array.from({name: "tarun"}));
+console.log(Array.from("tarun")); 
+// Converts an iterable (like a string) into an array: ["t", "a", "r", "u", "n"].
+
+console.log(Array.from({name: "tarun"})); 
+// Returns []. Why? Because JS doesn't know whether to make an array of keys or values. 
+// You have to specify: Array.from(Object.keys(obj)) or Object.values(obj).
 
 let score1 = 100;
 let score2 = 200;
 let score3 = 300;
 
-console.log(Array.of(score1,score2,score3));
+console.log(Array.of(score1, score2, score3)); 
+// Creates a new array instance from a variable number of arguments.
